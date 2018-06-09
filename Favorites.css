@@ -1,0 +1,26 @@
+/* User Avatar example #1: */
+
+.Favorites .UserAvatar {
+  border: 2px solid white;
+  display: grid;
+
+  grid-template-rows: 1.5em 1fr 1.5em;
+  grid-template-areas:
+    "FullName"
+    "img"
+    "UserType";
+
+}
+
+.Favorites .UserAvatar img{
+  grid-area: img;
+  max-height: 160px;
+  max-width: 160px;
+  font-weight: bold;
+  font-size: 1.2em;
+ 
+}
+
+.Border {
+  border: 8px solid grey;
+}
