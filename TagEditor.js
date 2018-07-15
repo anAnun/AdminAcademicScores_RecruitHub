@@ -22,9 +22,6 @@ class TagEditor extends React.Component {
 
   componentDidMount = () => {
     this.setState(convertTagArrayToState(this.props.value));
-    // if you need to do the ajax call (because no props.value),
-    // do the call, and then in the ".then" pass the results into convertTagArrayToState
-    // take the result of that call, and you call setState
   };
   componentDidUpdate = () => {};
   publicPost = ({ value }) => {
