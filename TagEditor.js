@@ -3,9 +3,6 @@ import { Chips } from "./Chips";
 import axios from "axios";
 import { showModal } from "./SmallModal";
 
-//this depends on the internals of the prime react chips, if it breaks, be suspicious of
-//where i do the publicChips.setState
-
 const convertTagArrayToState = tagArray => {
   return {
     public: tagArray.filter(tag => tag.public).map(tag => tag.tag),
@@ -150,54 +147,7 @@ class TagEditor extends React.Component {
       );
     }
   };
-  // putDelete = () => {
-  //   const myPromise = axios.put("/api/favorites", {
-  //     targetId: this.state.targetId,
-  //     targetType: this.state.targetType,
-  //     tags: this.state.value
-  //   });
-  // };
 
-  // delete = (values, stateKey) => {
-  //   const array = this.state[stateKey];
-
-  //   showModal({
-  //     title: "Tag deleted",
-  //     closeButtonText: false,
-  //     modalStyle: "danger"
-  //   }).then(() => {
-  //     const newArray = array.filter(item => !values.includes(item));
-  //     this.setState(
-  //       {
-  //         [stateKey]: newArray
-  //       },
-  //       this.putDelete
-  //     );
-  //   });
-  // };
-  // putDelete = () => {
-  //   const myPromise = axios.put("/api/favorites", {
-  //     targetId: this.state.targetId,
-  //     targetType: this.state.targetType,
-  //     tags: this.state.value
-  //   });
-  // };
-
-  // delete = ({ value }) => {
-  //   const array = [...this.state.value];
-  //   for (let i = 0; i < array.length; i++) {
-  //     if (array[i].tag === value[0]) {
-  //       array.splice(i, 1);
-  //       break;
-  //     }
-  //   }
-  //   this.setState(
-  //     {
-  //       value: array
-  //     },
-  //     this.putDelete
-  //   );
-  // };
   putDelete = () => {
     const myPromise = axios.put("/api/favorites", {
       targetId: this.state.targetId,
